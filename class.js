@@ -20,5 +20,12 @@ class User extends Greeter {
         super({name});
         this.surname = surname;
     }
-
+    greet(){
+        return `${super.greet()} ${this.surname}`;
+    } 
 }
+
+const user = new User({name: "Alejandro", surname: "Gemes"});
+console.log(user.greet());
+Greeter.greetWord = "Hola";
+console.log(user.greet());
